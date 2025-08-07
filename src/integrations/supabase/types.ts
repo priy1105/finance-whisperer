@@ -14,7 +14,311 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      bank_accounts: {
+        Row: {
+          account_name: string
+          account_number: string | null
+          account_type: string
+          balance: number | null
+          bank_name: string
+          created_at: string | null
+          id: string
+          is_active: boolean | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          account_name: string
+          account_number?: string | null
+          account_type: string
+          balance?: number | null
+          bank_name: string
+          created_at?: string | null
+          id?: string
+          is_active?: boolean | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          account_name?: string
+          account_number?: string | null
+          account_type?: string
+          balance?: number | null
+          bank_name?: string
+          created_at?: string | null
+          id?: string
+          is_active?: boolean | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      fixed_deposits: {
+        Row: {
+          bank_name: string
+          created_at: string | null
+          id: string
+          interest_rate: number
+          maturity_amount: number | null
+          maturity_date: string
+          principal_amount: number
+          start_date: string
+          status: string | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          bank_name: string
+          created_at?: string | null
+          id?: string
+          interest_rate: number
+          maturity_amount?: number | null
+          maturity_date: string
+          principal_amount: number
+          start_date: string
+          status?: string | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          bank_name?: string
+          created_at?: string | null
+          id?: string
+          interest_rate?: number
+          maturity_amount?: number | null
+          maturity_date?: string
+          principal_amount?: number
+          start_date?: string
+          status?: string | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      mutual_funds: {
+        Row: {
+          average_nav: number | null
+          created_at: string | null
+          current_nav: number | null
+          current_value: number | null
+          fund_house: string
+          fund_name: string
+          id: string
+          invested_amount: number | null
+          investment_type: string | null
+          is_active: boolean | null
+          scheme_code: string | null
+          units: number | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          average_nav?: number | null
+          created_at?: string | null
+          current_nav?: number | null
+          current_value?: number | null
+          fund_house: string
+          fund_name: string
+          id?: string
+          invested_amount?: number | null
+          investment_type?: string | null
+          is_active?: boolean | null
+          scheme_code?: string | null
+          units?: number | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          average_nav?: number | null
+          created_at?: string | null
+          current_nav?: number | null
+          current_value?: number | null
+          fund_house?: string
+          fund_name?: string
+          id?: string
+          invested_amount?: number | null
+          investment_type?: string | null
+          is_active?: boolean | null
+          scheme_code?: string | null
+          units?: number | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string | null
+          email: string | null
+          full_name: string | null
+          id: string
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string | null
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string | null
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      splitwise_data: {
+        Row: {
+          amount_owed: number | null
+          amount_owes: number | null
+          created_at: string | null
+          id: string
+          last_synced: string | null
+          splitwise_user_id: string | null
+          total_balance: number | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          amount_owed?: number | null
+          amount_owes?: number | null
+          created_at?: string | null
+          id?: string
+          last_synced?: string | null
+          splitwise_user_id?: string | null
+          total_balance?: number | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          amount_owed?: number | null
+          amount_owes?: number | null
+          created_at?: string | null
+          id?: string
+          last_synced?: string | null
+          splitwise_user_id?: string | null
+          total_balance?: number | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      stocks: {
+        Row: {
+          average_price: number | null
+          company_name: string
+          created_at: string | null
+          current_price: number | null
+          current_value: number | null
+          exchange: string | null
+          id: string
+          invested_amount: number | null
+          is_active: boolean | null
+          quantity: number | null
+          symbol: string
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          average_price?: number | null
+          company_name: string
+          created_at?: string | null
+          current_price?: number | null
+          current_value?: number | null
+          exchange?: string | null
+          id?: string
+          invested_amount?: number | null
+          is_active?: boolean | null
+          quantity?: number | null
+          symbol: string
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          average_price?: number | null
+          company_name?: string
+          created_at?: string | null
+          current_price?: number | null
+          current_value?: number | null
+          exchange?: string | null
+          id?: string
+          invested_amount?: number | null
+          is_active?: boolean | null
+          quantity?: number | null
+          symbol?: string
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      transactions: {
+        Row: {
+          account_id: string | null
+          amount: number
+          category: string
+          created_at: string | null
+          description: string
+          id: string
+          parsed_from_email: boolean | null
+          reference_number: string | null
+          source: string | null
+          subcategory: string | null
+          transaction_date: string
+          transaction_type: string
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          account_id?: string | null
+          amount: number
+          category: string
+          created_at?: string | null
+          description: string
+          id?: string
+          parsed_from_email?: boolean | null
+          reference_number?: string | null
+          source?: string | null
+          subcategory?: string | null
+          transaction_date: string
+          transaction_type: string
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          account_id?: string | null
+          amount?: number
+          category?: string
+          created_at?: string | null
+          description?: string
+          id?: string
+          parsed_from_email?: boolean | null
+          reference_number?: string | null
+          source?: string | null
+          subcategory?: string | null
+          transaction_date?: string
+          transaction_type?: string
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "transactions_account_id_fkey"
+            columns: ["account_id"]
+            isOneToOne: false
+            referencedRelation: "bank_accounts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
